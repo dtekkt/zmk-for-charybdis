@@ -46,6 +46,6 @@
             trackball-bindings = <&tmv_coarse>;
             display-name = "MEDNAV";
             label = "MEDNAV";
-        };
+        }; /
     };
 };
