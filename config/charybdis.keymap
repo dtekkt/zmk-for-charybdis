@@ -29,6 +29,7 @@
             >;
 
             trackball-bindings = <&tmv_coarse>;
+            display-name = "BASE";
             label = "BASE";
         };
 
@@ -43,6 +44,7 @@
             >;
 
             trackball-bindings = <&tmv_coarse>;
+            display-name = "MEDNAV";
             label = "MEDNAV";
         };
     };
