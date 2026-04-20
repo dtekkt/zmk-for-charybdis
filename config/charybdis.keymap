@@ -25,7 +25,7 @@
 &kp DE_LT         &kp A      &kp S      &kp D         &kp F      &kp G        &kp H      &kp J      &kp K         &kp L       &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
 &kp LEFT_SHIFT    &kp Z      &kp X      &kp C         &kp V      &kp B        &kp N      &kp M      &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
                                         &kp LEFT_WIN  &kp SPACE  &mo 1        &kp LALT   &kp GRAVE
-                                                      &mkp MB1   &mkp MB2     &kp ENTER
+                                                      &kp LCTRL  &kp LALT     &kp ENTER
             >;
 
             trackball-bindings = <&tmv_coarse>;
