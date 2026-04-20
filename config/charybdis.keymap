@@ -18,9 +18,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        BASE {
             bindings = <
-&mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4     &kp DE_N5       &kp DE_N6  &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt BACKSPACE DE_SZ
+&mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4     &kp DE_N5       &kp DE_N6  &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt DELETE DE_SZ
 &kp TAB           &kp Q      &kp W      &kp E      &kp R         &kp T           &kp Y      &kp U          &kp I         &kp O       &kp P                     &mt DE_PLUS DE_U_UMLAUT
 &kp DE_LT         &kp A      &kp S      &kp D      &kp F         &kp G           &kp H      &kp J          &kp K         &kp L       &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
 &kp LEFT_SHIFT    &kp Z      &kp X      &kp C      &kp V         &kp B           &kp N      &kp M          &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
@@ -29,19 +29,21 @@
             >;
 
             trackball-bindings = <&tmv_coarse>;
+            label = "BASE";
         };
 
-        layer_1 {
+        MEDNAV {
             bindings = <
-&kp F1        &kp F2  &kp F3  &kp F4  &kp F5     &kp F6        &kp F7         &kp F8      &kp F9     &kp F10    &kp F11  &kp F12
-&none         &none   &none   &none   &none      &bt BT_PRV    &none          &kp HOME    &kp UP     &kp END    &none    &none
-&kp CAPSLOCK  &none   &none   &none   &none      &bt BT_NXT    &kp PAGE_UP    &kp LEFT    &kp DOWN   &kp RIGHT  &none    &none
-&none         &none   &none   &none   &none      &bt BT_CLR    &kp PAGE_DOWN  &mkp LCLK   &mkp RCLK  &mkp MCLK  &none    &kp EQUAL
-                              &none   &kp SPACE  &none         &kp LALT       &kp DELETE
-                                      &mkp MB1   &mkp MB2      &kp ENTER
+&kp F12       &kp F1      &kp F2          &kp F3            &kp F4        &kp F5             &kp F6         &kp F7     &kp F8     &kp F9     &kp F10             &kp F11
+&trans        &bt BT_CLR  &trans          &kp LA(LG(DE_K))  &trans        &trans             &kp PAGE_UP    &kp HOME   &kp UP     &kp END    &kp INSERT          &trans
+&kp CAPSLOCK  &bt BT_NXT  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp PRINTSCREEN    &kp PAGE_DOWN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CONTEXT_MENU  &trans
+&trans        &bt BT_PRV  &kp C_MUTE      &kp C_VOL_DN      &kp C_VOL_UP  &trans             &trans         &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans              &trans
+                                          &trans            &trans        &trans             &trans         &trans
+                                                            &trans        &trans             &trans
             >;
 
             trackball-bindings = <&tmv_coarse>;
+            label = "MEDNAV";
         };
 
         /* layer_2 {
