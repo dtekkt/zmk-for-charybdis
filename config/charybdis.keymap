@@ -20,12 +20,12 @@
 
         layer_0 {
             bindings = <
-&mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3     &kp DE_N4  &kp DE_N5       &kp DE_N6  &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt BACKSPACE DE_SZ
-&kp TAB           &kp Q      &kp W      &kp E         &kp R      &kp T           &kp Y      &kp U          &kp I         &kp O       &kp P                     &mt DE_PLUS DE_U_UMLAUT
-&kp DE_LT         &kp A      &kp S      &kp D         &kp F      &kp G           &kp H      &kp J          &kp K         &kp L       &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
-&kp LEFT_SHIFT    &kp Z      &kp X      &kp C         &kp V      &kp B           &kp N      &kp M          &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
-                                        &kp LEFT_WIN  &kp SPACE  &mo 1           &kp LALT   &kp BACKSPACE
-                                                      &kp LCTRL  &kp LEFT_ALT    &kp ENTER
+&mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4     &kp DE_N5       &kp DE_N6      &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt BACKSPACE DE_SZ
+&kp TAB           &kp Q      &kp W      &kp E      &kp R         &kp T           &kp Y          &kp U          &kp I         &kp O       &kp P                     &mt DE_PLUS DE_U_UMLAUT
+&kp DE_LT         &kp A      &kp S      &kp D      &kp F         &kp G           &kp H          &kp J          &kp K         &kp L       &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
+&kp LEFT_SHIFT    &kp Z      &kp X      &kp C      &kp V         &kp B           &kp N          &kp M          &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
+                                        &mo 1      &kp LEFT_GUI  &kp DE_SPACE    &kp BACKSPACE  &kp RIGHT_ALT
+                                                   &kp LCTRL     &kp LEFT_ALT    &kp ENTER
             >;
 
             trackball-bindings = <&tmv_coarse>;
