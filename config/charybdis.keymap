@@ -9,41 +9,94 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &lt {
-    tapping-term-ms = <200>;
-    flavor = "balanced";
-    quick-tap-ms = <150>;
+tapping-term-ms = <200>;
+flavor = "balanced";
+quick-tap-ms = <150>;
 };
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
+keymap {
+compatible = "zmk,keymap";
 
-        BASE {
-            bindings = <
+BASE {
+bindings = <
 &mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_N4     &kp DE_N5       &kp DE_N6  &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt DELETE DE_SZ
 &kp TAB           &kp Q      &kp W      &kp E      &kp R         &kp T           &kp Y      &kp U          &kp I         &kp O       &kp P                     &mt DE_PLUS DE_U_UMLAUT
 &kp DE_LT         &kp A      &kp S      &kp D      &kp F         &kp G           &kp H      &kp J          &kp K         &kp L       &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
 &kp LEFT_SHIFT    &kp Z      &kp X      &kp C      &kp V         &kp B           &kp N      &kp M          &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
-                                        &mo 1      &kp DE_SPACE  &kp LEFT_GUI    &kp ENTER  &kp BACKSPACE
-                                                   &kp LCTRL     &kp LEFT_ALT    &kp RALT
-            >;
+&mo 1      &kp DE_SPACE  &kp LEFT_GUI    &kp ENTER  &kp BACKSPACE
+&kp LCTRL     &kp LEFT_ALT    &kp RALT
+>;
 
-            trackball-bindings = <&tmv_coarse>;
-            label = "BASE";
-        };
+trackball-bindings = <&tmv_coarse>;
+label = "BASE";
+};
 
-        MEDNAV {
+MEDNAV {
+bindings = <
+&kp F12       &kp F1      &kp F2          &kp F3            &kp F4        &kp F5             &kp F6         &kp F7     &kp F8     &kp F9     &kp F10             &kp F11
+&trans        &bt BT_CLR  &trans          &kp LA(LG(DE_K))  &trans        &trans             &kp PAGE_UP    &kp HOME   &kp UP     &kp END    &kp INSERT          &trans
+&kp CAPSLOCK  &bt BT_NXT  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp PRINTSCREEN    &kp PAGE_DOWN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CONTEXT_MENU  &trans
+&trans        &bt BT_PRV  &kp C_MUTE      &kp C_VOL_DN      &kp C_VOL_UP  &trans             &trans         &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans              &trans
+&trans            &trans        &trans             &trans         &trans
+&trans        &trans             &trans
+>;
+
+trackball-bindings = <&tmv_coarse>;
+label = "MEDNAV";
+};
+
+        /* layer_2 {
             bindings = <
-&kp F12         &kp F1      &kp F2          &kp F3            &kp F4        &kp F5             &kp F6         &kp F7     &kp F8     &kp F9     &kp F10             &kp F11
-&bt BT_CLR_ALL  &bt BT_CLR  &trans          &trans            &trans        &trans             &kp PAGE_UP    &kp HOME   &kp UP     &kp END    &kp INSERT          &trans
-&kp CAPSLOCK    &bt BT_NXT  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp PRINTSCREEN    &kp PAGE_DOWN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp K_CONTEXT_MENU  &trans
-&trans          &bt BT_PRV  &kp C_MUTE      &kp C_VOL_DN      &kp C_VOL_UP  &trans             &trans         &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans              &trans
-                                            &trans            &trans        &trans             &trans         &trans
-                                                              &trans        &trans             &trans
+&none  &none   &none    &none   &none         &none         &kp N1         &none         &none     &none  &none   &to 0
+&none  &none   &none    &none   &none         &none         &none         &none          &rgb_ug RGB_BRD &rgb_ug RGB_BRI  &rgb_ug RGB_EFF   &rgb_ug RGB_TOG
+&none  &none   &none    &none   &none         &none         &none         &mkp LCLK     &mkp RCLK  &none  &none   &none
+&none  &none   &none    &none   &bt BT_NXT  &bt BT_CLR    &none         &none         &none     &none  &none   &none
+                                   &none         &none         &none         &none         &none
+                                                 &none         &none         &none
+            >;
+          trackball-bindings = <&tsl>;
+            
+        };
+
+       Mouse {
+            bindings = <
+&none        &none         &none         &none         &none      &none         &none       &none      &none         &none         &none         &none
+&none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &none      &bt BT_CLR    &bt BT_CLR  &none      &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none
+&none        &trans        &trans        &mkp MCLK     &trans     &none         &none       &trans     &mkp MCLK     &trans        &trans        &none
+&bootloader  &trans        &mkp RCLK     &mo 4         &mkp LCLK  &mo 5         &mo 5       &mkp LCLK  &mo 4         &mkp RCLK     &trans        &bootloader
+                                         &mo 5         &mkp LCLK  &mkp RCLK     &mkp RCLK   &mkp LCLK
+                                                       &none      &trans        &trans
             >;
 
-            trackball-bindings = <&tmv_coarse>;
-            label = "MEDNAV";
+            
         };
-    };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
+                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
+                                      &trans     &trans       &trans
+            >;
+                
+                
+                trackball-bindings = <&tsl>;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans     &mkp MCLK  &trans     &trans       &trans     &trans     &mkp MCLK  &trans     &trans  &trans
+&trans  &trans  &mkp RCLK  &trans     &mkp LCLK  &trans       &trans     &mkp LCLK  &trans     &mkp RCLK  &trans  &trans
+                           &trans     &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK
+                                      &trans     &trans       &trans
+            >;
+                trackball-bindings = <&tmv_fine>;
+                
+        };*/
+};
 };
