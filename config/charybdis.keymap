@@ -6,7 +6,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        BTreset {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <36 0>;
+            layers = <2>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
