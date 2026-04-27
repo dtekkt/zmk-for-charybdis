@@ -8,17 +8,69 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        HMRShiftR: HMRShiftR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMRSHIFTR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <54 50 40 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 53 54>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+        };
+
+        HMRShiftL: HMRShiftL {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMRSHIFTL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <55 55 52 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 51 52 55>;
+        };
+
+        HMRR: HMRR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMRR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <54 50 40 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 53 54>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        HMRL: HMRL {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMRL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-while-undecided;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <55 55 52 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 51 52 55>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         BASE {
             bindings = <
-&mt ESC DE_CARET  &kp DE_N1  &kp DE_N2  &kp DE_N3     &kp DE_N4     &kp DE_N5       &kp DE_N6    &kp DE_N7      &kp DE_N8     &kp DE_N9   &kp DE_N0                 &mt DELETE DE_SZ
-&kp TAB           &kp DE_Q   &kp DE_W   &kp DE_E      &kp DE_R      &kp DE_T        &kp DE_Z     &kp DE_U       &kp DE_I      &kp DE_O    &kp DE_P                  &mt DE_PLUS DE_U_UMLAUT
-&kp DE_LT         &kp DE_A   &kp DE_S   &kp DE_D      &kp DE_F      &kp DE_G        &kp DE_H     &kp DE_J       &kp DE_K      &kp DE_L    &mt DE_ACUTE DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
-&kp LEFT_SHIFT    &kp DE_Y   &kp DE_X   &kp DE_C      &kp DE_V      &kp DE_B        &kp DE_N     &kp DE_M       &kp DE_COMMA  &kp DE_DOT  &kp DE_MINUS              &kp RIGHT_SHIFT
-                                        &kp LEFT_GUI  &kp DE_SPACE  &mo 1           &lt 2 ENTER  &kp BACKSPACE
-                                                      &kp LCTRL     &kp LEFT_ALT    &kp RALT
+&mt ESC DE_CARET  &kp DE_N1            &kp DE_N2            &kp DE_N3                   &kp DE_N4                &kp DE_N5    &kp DE_N6    &kp DE_N7                 &kp DE_N8                    &kp DE_N9            &kp DE_N0                    &mt DELETE DE_SZ
+&kp TAB           &kp DE_Q             &kp DE_W             &kp DE_E                    &kp DE_R                 &kp DE_T     &kp DE_Z     &kp DE_U                  &kp DE_I                     &kp DE_O             &kp DE_P                     &mt DE_PLUS DE_U_UMLAUT
+&kp DE_LT         &HMRL LEFT_GUI DE_A  &HMRL LEFT_ALT DE_S  &HMRShiftL LEFT_SHIFT DE_D  &HMRL LEFT_CONTROL DE_F  &kp DE_G     &kp DE_H     &HMRR RIGHT_CONTROL DE_J  &HMRShiftR RIGHT_SHIFT DE_K  &HMRR LEFT_ALT DE_L  &HMRR RIGHT_GUI DE_O_UMLAUT  &mt DE_HASH DE_A_UMLAUT
+&kp LEFT_SHIFT    &kp DE_Y             &kp DE_X             &kp DE_C                    &kp DE_V                 &kp DE_B     &kp DE_N     &kp DE_M                  &kp DE_COMMA                 &kp DE_DOT           &kp DE_MINUS                 &kp RIGHT_SHIFT
+                                                            &mt LEFT_ALT LEFT_GUI       &kp DE_SPACE             &lt 1 TAB    &lt 2 ENTER  &kp BACKSPACE
+                                                                                        &mkp RCLK                &mkp LCLK    &kp RALT
             >;
 
             trackball-bindings = <&tmv_coarse>;
